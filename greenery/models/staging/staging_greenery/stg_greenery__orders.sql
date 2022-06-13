@@ -16,7 +16,7 @@ renamed as (
         user_id,
         promo_id,
         address_id,
-        created_at,
+        created_at as created,
         order_cost,
         shipping_cost,
         order_total as order_total_cost,
