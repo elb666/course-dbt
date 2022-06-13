@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: staging
+    description: "Source tables from Greenery OLTP" 
+    database: dbt
+    schema: public
+    tables:
+      - name: addresses
+
+      - name: events
+
+      - name: order_items
+
+      - name: orders
+
+      - name: products
+
+      - name: promos
+
+      - name: users
