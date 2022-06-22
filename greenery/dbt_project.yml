@@ -40,6 +40,14 @@ models:
       +materialized: table
     marts:
       +materialized: table
-        core:
-          +schema: 
+      core:
+        +schema: core
+      marketing:
+        +schema: marketing
+      product:
+        +schema: product
+      utilities:
+        +schema: utilities
+
+
 
