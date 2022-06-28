@@ -11,9 +11,11 @@ with sq_0 as (
     from dbt_eric_b_core.dim_users
 )
 select
+
     users_with_1_or_more_orders::float / total_users  as percent_of_users_who_have_ordered,
     users_with_2_or_more_orders::float / total_users  as percent_of_users_who_have_ordered_more_than_once,
     users_with_2_or_more_orders::float / users_with_1_or_more_orders  as repeat_rate
+
 from sq_0;
 
 

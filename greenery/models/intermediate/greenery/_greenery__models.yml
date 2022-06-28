@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: int_greenery__orders_agg
+    description: >
+      Add a simple aggregate to the orders table
+    columns:
+      - name: order_id
+        description: PK for orders
+        tests:
+        - unique
+        - not_null
+
+  - name: int_greenery__products_agg
+    description: >
+      Add some nice color to the product table
+    columns:
+      - name: product_id
+        description: PK for products
+        tests:
+        - unique
+        - not_null
+
+  - name: int_greenery__user_orders_agg
+    description: >
+      Aggregate some user order stuff
+    columns:
+      - name: user_id
+        description: ID of the user
+        tests:
+        - not_null
+
+
+
+
+

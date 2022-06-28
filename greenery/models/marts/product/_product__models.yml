@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: fact_product_facts
+    description: >
+      Provides some metrics and such about the products
+    columns:
+      - name: product_id
+        description: PK for products
+        tests:
+        - unique
+        - not_null

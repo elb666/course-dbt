@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: fact_user_order_facts
+    description: >
+      Interesting metrics about users and the stuff they buy
+    columns:
+      - name: user_id
+        description: ID of the user and PK of the table
+        tests:
+        - not_null
+

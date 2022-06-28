@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: >
+      Product dimension
+    columns:
+      - name: product_id
+        description: PK for products
+        tests:
+        - unique
+        - not_null
+
+  - name: dim_users
+    description: >
+      User dimension
+    columns:
+      - name: user_id
+        description: PK for users
+        tests:
+        - unique
+        - not_null
+
+  - name: fact_orders
+    description: >
+      Basic order fact
+    columns:
+      - name: order_id
+        description: PK for orders
+        tests:
+        - unique
+        - not_null
