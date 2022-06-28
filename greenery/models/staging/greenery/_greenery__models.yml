@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: stg_greenery__addresses
+    description: Address info such as street address and zip code
+    columns:
+      - name: address_id
+        description: PK for addresses
+        tests:
+        - unique
+        - not_null
+
+  - name: stg_greenery__events
+    description: User interaction events such as add to cart, page view, etc.
+    columns:
+      - name: event_id
+        description: PK for events
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_greenery__order_items
+    description: Product IDs and quantities for each order
+    columns:
+      - name: order_id
+        description: Order ID of the order that has these products in it in these quantities
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_greenery__orders')
+              field: order_id
+      - name: product_id
+        description: Product ID of one of the products in the order
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_greenery__products')
+              field: product_id
+      - name: quantity
+        description: Number of this product ordered in this order
+        tests:
+          - not_null
+          - positive_values
+            
+  - name: stg_greenery__orders
+    description: Orders and summary details about them, such as costs, delivery info, status
+    columns:
+      - name: order_id
+        description: PK of the orders table
+        tests:
+          - not_null
+          - unique
+      - name: user_id
+        description: User ID of the person placing the order
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_greenery__users')
+              field: user_id
+
+  - name: stg_greenery__products
+    description: Products that we sell
+    columns:
+      - name: product_id
+        description: PK of the products table
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_greenery__promos
+    description: Promo names, statuses, and the discounts they come with
+    columns:
+      - name: promo_id
+        description: PK for promos
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_greenery__users
+    description: Table of users and some details about them, like and stuff
+    columns:
+      - name: user_id
+        description: PK for users
+        tests:
+          - not_null
+          - unique

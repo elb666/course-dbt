@@ -23,7 +23,7 @@ renamed as (
         phone_number,
         created_at as created,
         updated_at as updated,
-        address_id
+        address_id as user_address
 
     from source
 
