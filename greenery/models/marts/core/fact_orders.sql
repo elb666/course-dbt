@@ -12,21 +12,9 @@ orders as (
 
 ),
 
-order_items as (
-
-    select * from {{ ref('stg_greenery__order_items' ) }}
-
-),
-
 order_items_agg as (
 
-    select
-
-        order_items.order_id,
-        sum(order_items.quantity) as total_number_of_items
-
-    from order_items
-    group by 1
+    select * from {{ ref('int_greenery__orders_agg' ) }}
 
 ),
 

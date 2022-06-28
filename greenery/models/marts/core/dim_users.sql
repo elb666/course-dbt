@@ -8,7 +8,7 @@ with
 
 users as (
 
-    select * from {{ ref('stg_greenery__users' ) }}
+    select * from {{ ref('int_greenery__user_orders_agg' ) }}
 
 ),
 
@@ -29,7 +29,8 @@ final as (
         users.phone_number,
         users.created,
         users.updated,
-        users.address_id,
+        users.order_count,
+        users.user_address,
         addresses.street_address,
         addresses.zipcode,
         addresses.state,
@@ -37,7 +38,7 @@ final as (
 
     from users
     left join addresses
-        on users.address_id = addresses.address_id
+        on users.user_address = addresses.address_id
 
 )
 
