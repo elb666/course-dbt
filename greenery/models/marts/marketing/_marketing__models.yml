@@ -1,6 +1,28 @@
 version: 2
 
 models:
+  - name: fact_sessions
+    description: >
+      Interesting metrics sessions
+    columns:
+      - name: session_id
+        description: Unique session identifier
+        tests:
+        - not_null
+        - unique
+      - name: session_start
+        description: Created datetime of the first event in the session
+        tests:
+        - not_null
+      - name: session_end
+        description: Created datetime of the last event in the session
+        tests:
+        - not_null
+      - name: session_length
+        description: Interval between session_start and session_end
+        tests:
+        - not_null
+
   - name: fact_user_order_facts
     description: >
       Interesting metrics about users and the stuff they buy

@@ -21,6 +21,28 @@ models:
         - unique
         - not_null
 
+  - name: int_greenery__sessions
+    description: >
+      Aggregate some details about sessions
+    columns:
+      - name: session_id
+        description: PK for sessions
+        tests:
+        - not_null
+        - unique
+      - name: session_start
+        description: Created datetime of the first event in the session
+        tests:
+        - not_null
+      - name: session_end
+        description: Created datetime of the last event in the session
+        tests:
+        - not_null
+      - name: session_length
+        description: Interval between session_start and session_end
+        tests:
+        - not_null
+
   - name: int_greenery__user_orders_agg
     description: >
       Aggregate some user order stuff
