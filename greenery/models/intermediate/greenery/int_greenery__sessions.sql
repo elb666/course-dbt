@@ -12,7 +12,7 @@ events as (
 
 ),
 
-events_agg as (
+session_events_agg as (
 
     select
 
@@ -37,7 +37,7 @@ final as (
         , session_length
         {{ count_event_type_column_names() }}
 
-    from events_agg
+    from session_events_agg
 
 )
 

@@ -43,6 +43,16 @@ models:
         tests:
         - not_null
 
+  - name: int_greenery__product_sessions
+    description: >
+      Aggregate some details about sessions by product
+    columns:
+      - name: product_id
+        description: PK for product_sessions
+        tests:
+        - not_null
+        - unique
+
   - name: int_greenery__user_orders_agg
     description: >
       Aggregate some user order stuff
