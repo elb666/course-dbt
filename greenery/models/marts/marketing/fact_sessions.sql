@@ -21,14 +21,14 @@ sessions as (
 final as (
 
     select
-        session_id
+
+          session_id
         , user_id
         , session_start
         , session_end
         , session_length
-        {% for event_type in event_types %}
-        , {{ event_type }}_count
-        {% endfor %}
+        {{ count_event_type_column_names() }}
+
     from sessions
 
 )

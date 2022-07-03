@@ -1,0 +1,13 @@
+version: 2
+
+macros:
+  - name: count_event_type_logic
+    description: >
+      For each value of stg_greenery__events.event_type generate a line of sql
+      that will sum the number of instances of that value.  Uses leading comma. Example:
+        , sum((event_type = 'checkout')::int) as checkout_count
+  - name: count_event_type_column_names
+    description: >
+      For each value of stg_greenery__events.event_type generate a line of sql with the "count_"
+      column for that value.  Uses leading commas. Example:
+        , checkout_count
