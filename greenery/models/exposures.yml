@@ -1,0 +1,13 @@
+version: 2
+
+exposures:  
+  - name: fancy_funnel_dashboard
+    description: >
+      Fancy Funnel Dashboard in OBIEE
+    type: dashboard
+    maturity: high
+    owner:
+      name: E. Richard Marx
+      email: erichardmarx@example.com
+    depends_on:
+      - ref('fact_sessions')
